@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+</head>
+<style>
+
+body{
+    margin: 0;
+    background-color: lightcyan;
+    width: 100%;
+}
+
+.container{
+    width: 90%;
+    margin: 20px auto;
+}
+
+.current_Date{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'Righteous', cursive;
+    padding: 5px;
+}
+
+.cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;  
+    
+}
+.card{
+    width: 20%;
+    min-height: 300px;
+    min-width: 140px;
+    background-color: white;
+    border: 1px solid lightblue;
+    border-radius: 80px;
+    padding: 40px 20px;
+    margin: 15px 10px;
+    box-shadow: 4px 4px 6px 5px rgba(0,0,0,.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+span{
+    line-height: 25px;
+}
+
+
+
+
+</style>
+
+<body>
+
+
+    <div class="container">
+        <div class="current_Date"></div>
+        <div class="cards">
+        </div>
+    </div>
+    
+
+
+<script>
+
+    fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-D388F43B-A02B-4B2B-97E6-E01D5F0EE8EE')
+        .then(function(response) {
+            return response.json();
+        })
+
+
+        .then(function(weather_array) {
+            // console.log(weather_array);
+            var locations = weather_array.records.location
+            // console.log(locations);
+
+            locations.forEach(location => {
+                var location_name = location.locationName  //地名
+                // console.log(location_name)
+                var Wx = location.weatherElement[0].time[0].parameter.parameterName  //天氣
+                // console.log(Wx)
+                var MaxT  = location.weatherElement[2].time[2].parameter.parameterName  //最高溫
+                // console.log(MaxT)
+                var MinT  = location.weatherElement[4].time[1].parameter.parameterName  //最低溫
+                // console.log(MinT)
+                var PoP  = location.weatherElement[1].time[0].parameter.parameterName  //降雨機率
+                // console.log(PoP)                
+                var CI = location.weatherElement[3].time[0].parameter.parameterName  //天氣描述
+                // console.log(CI)
+                var Wx_code = location.weatherElement[0].time[0].parameter.parameterValue   //天氣代碼
+                // console.log(Wx_code)
+                var Unit  = location.weatherElement[2].time[2].parameter.parameterUnit  //最高溫
+                // console.log(Unit)
+
+                if(Wx_code == 1){
+                    var weather_icon = "https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                }
+                else if(Wx_code == 2 || Wx_code == 3){
+                    var weather_icon = "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                }
+                else if(Wx_code == 4 ||Wx_code == 5 || Wx_code == 6 || Wx_code == 7){
+                    var weather_icon = "https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+                }
+                else if(Wx_code == 8 || Wx_code == 9 || Wx_code == 10 || Wx_code == 11){
+                    var weather_icon = "https://ssl.gstatic.com/onebox/weather/64/rain_s_cloudy.png"
+                }
+                
+
+
+                var cards = document.querySelector(".cards")
+                // console.log(cards)
+
+                cards.innerHTML +=`   
+                    <div class="card">
+                        <div class="card_img">
+                            <img src="${weather_icon}" alt="">
+                        </div>
+                
+                        <div class="card_content">
+                            <h1>${location_name}</h1>
+                            <h2>${Wx}</h2>
+                            <div>
+                                <span>降雨機率: ${PoP}%</span><br>
+                                <span>最高溫: ${MaxT}°${Unit}</span><br>
+                                <span>最低溫: ${MinT}°${Unit}</span>
+                            </div>
+                            <div>${CI}</div>
+                        </div>
+                    </div>
+                `           
+
+
+            });
+
+            
+            var today = new Date()
+
+            var day = document.querySelector(".current_Date")
+
+            var current_Date = today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate()
+            var current_Time = today.getHours() + ":" + today.getMinutes()
+
+            // let NowString = Now.getFullYear() + "/" + Now.getMonth() + 1 + "/" + Now.getDate() + " " + Now.getHours() + ":" + (Now.getMinutes() < 10 ? "0" + Now.getMinutes() : Now.getMinutes());
+
+            day.innerHTML += `${current_Date}  ${current_Time}`
+
+            
+    });
+
+    
+
+</script>
+
+
+</body>
+</html>
