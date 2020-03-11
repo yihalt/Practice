@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kapibara</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    .btn-primary {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+    }
+
+    #parallax {
+      width: 100%;
+      height: 100vh;
+      background-position: top;
+      background-size: cover;
+      background-image: url("https://256326-798313-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2019/10/%E6%B0%B4%E8%B1%9A-%E4%BC%8A%E8%B1%86%E4%BB%99%E4%BA%BA%E6%8E%8C%E5%8B%95%E7%89%A9%E5%85%AC%E5%9C%92-1170x610.jpg");
+      background-attachment: fixed;
+    }
+
+    .mask {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div id="main">
+    <div class="container cards">
+      <div class="row cards">
+        <div class="col-12 col-md-4 my-5">
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="https://cdn.hk01.com/di/media/images/659872/org/a92367c95ce4dc70e7d26b4df6ec7f1b.jpg/v-l40kINCpx8DgyRT5mn6m_TePRF827bSe1iW0ntYls?v=w1280r16_9"
+                class="card-img-top" alt="...">
+
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 col-md-4 my-5">
+          <div class="card">
+            <div class="card-img">
+              <img src="https://i1.hdslb.com/bfs/archive/726f8d07cf36b177799f04e57e0945c20e510402.jpg"
+                class="card-img-top" alt="...">
+
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 my-5">
+          <div class="card">
+            <div class="card-img">
+              <img src="https://static.ettoday.net/images/3592/d3592229.jpg" class="card-img-top" alt="...">
+
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div id="parallax" class="mb-5 ">
+
+      <div class="mask w-100 h-100">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+          <button type="button" class="btn bg-white text-info font-weight-bold w-25">Go somewhere</button>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+
+    <div class="container">
+      <div class="media flex-wrap" class="p-5">
+        <img class="w-50 mr-3 col-12 col-md-6 order-1 order-md-0 mb-3"
+          src="https://static.ettoday.net/images/258/d258000.jpg" class="align-self-center mr-3" alt="...">
+        <div class="media-body col-12 col-md-6 mb-3">
+          <h5 class="mt-0 ">Top-aligned media</h5>
+          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
+            odio,
+            vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+            lacinia congue felis in faucibus.</p>
+          <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et
+            magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+  <div class="footer bg-warning text-white border border-warning p-3 mt-5 text-center">
+    <span>此頁面僅為全端與Phthon資料工程師養成班使用</span>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
